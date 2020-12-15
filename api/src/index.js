@@ -14,7 +14,7 @@ const Post = mongoose.model('Post', postSchema);
 const startServer = () => {
   app.listen(port, () => {
     console.log(`api сервис запущен на PORT: ${port}`);
-    console.log(`api сервис запущен на HOST: ${host}`);
+    console.log(`api сервис запущен  на HOST: ${host}`);
     console.log(`Адрес БД: ${db}`);
 
     // Post.find(function (err, posts) {
@@ -25,7 +25,7 @@ const startServer = () => {
     const silence = new Post({ name: 'Silence' });
     silence.save(function (err, savedSilence) {
       if (err) return console.error(err);
-      console.log('savedSilence', savedSilence);
+      console.log('savedSilence with volumes!!!!', savedSilence);
     });
   });
 };
