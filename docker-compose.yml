@@ -3,6 +3,7 @@ version: '3'
 services:
   api:
     build: ./api
+    container_name: realworld-docker-api
     command: npm run start
     restart: unless-stopped
     ports:
@@ -16,6 +17,7 @@ services:
 
   api_db:
     image: mongo:latest
+    container_name: realworld-docker-db
     volumes:
       - mongodb_api:/data/db
 
