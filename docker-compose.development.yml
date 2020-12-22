@@ -1,4 +1,3 @@
-# docker-compose.development.yml
 version: '3'
 
 services:

@@ -15,7 +15,7 @@ const startServer = () => {
   app.listen(port, () => {
     console.log(`api сервис запущен на PORT: ${port}`);
     console.log(`api сервис запущен  на HOST: ${host}`);
-    console.log(`Адрес БД: ${db}`);
+    console.log(`Адрес БД!: ${db}`);
 
     // Post.find(function (err, posts) {
     //   if (err) return console.error(err);
@@ -25,7 +25,7 @@ const startServer = () => {
     const silence = new Post({ name: 'Silence' });
     silence.save(function (err, savedSilence) {
       if (err) return console.error(err);
-      console.log('savedSilence with volumes!!!!', savedSilence);
+      console.log('savedSilence with volumes!', savedSilence);
     });
   });
 };

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon"
+    "dev": "nodemon --legacy-watch"
   },
   "author": "",
   "license": "ISC",

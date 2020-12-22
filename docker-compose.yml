@@ -1,4 +1,3 @@
-# docker-compose.yml
 version: '3'
 
 services:
@@ -10,7 +9,7 @@ services:
       - '3000:3000'
     environment:
       - PORT=3000
-      - HOST=https://realworld-docker.com
+      - HOST=http://realworld.com
       - MONGO_URL=mongodb://api_db:27017/api
     depends_on:
       - api_db
