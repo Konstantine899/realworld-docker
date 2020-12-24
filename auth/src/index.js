@@ -13,7 +13,7 @@ const startServer = () => {
 };
 
 app.get('/test', (req, res) => {
-  res.send('Наш сервер запущен корректно');
+  res.send('Наш сервер запущен корректно с помощью auth');
 });
 
 connectDb()
