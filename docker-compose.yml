@@ -8,11 +8,13 @@ services:
     ports:
       - '3000:3000'
     restart: unless-stopped
+    environment:
+      - CHOKIDAR_USEPOLLING=true
     stdin_open: true
     tty: true
     volumes:
-      - ./frontend/public:/usr/src/app/frontend/public
-      - ./frontend/src:/usr/src/app/frontend/src
+      - ./frontend/src:/usr/src/app/src
+      - ./frontend/public:/usr/src/app/public
 
   api:
     build: ./api
