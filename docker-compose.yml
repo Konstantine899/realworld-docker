@@ -47,6 +47,16 @@ services:
     volumes:
       - mongodb_auth:/data/db
 
+  nginx:
+    image: nginx:stable-alpine
+    container_name: realworld-docker-nginx
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx/nginx.conf.prod:/etc/nginx/conf.d/nginx.conf
+    depends_on:
+      - frontend
+
 volumes:
   mongodb_api:
   mongodb_auth:
