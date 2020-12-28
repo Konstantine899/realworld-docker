@@ -1,8 +1,8 @@
-// index.js
+// api/src/index.js
 const express = require('express');
 const mongoose = require('mongoose');
 const { connectDb } = require('./helpers/db');
-const { host, port, db } = require('./configuration');
+const { host, port, db, authApiUrl } = require('./configuration');
 const app = express();
 
 const postSchema = new mongoose.Schema({
@@ -32,6 +32,13 @@ const startServer = () => {
 
 app.get('/test', (req, res) => {
   res.send('Наш сервер запущен корректно');
+});
+
+app.get('/testwithcurrentuser', (req, res) => {
+  console.log('authApiUrl', authApiUrl);
+  res.json({
+    testwithcurrentuser: true,
+  });
 });
 
 connectDb()

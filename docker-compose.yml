@@ -20,6 +20,7 @@ services:
       - PORT=3001
       - HOST=http://realworld.com
       - MONGO_URL=mongodb://api_db:27017/api
+      - AUTH_API_URL=http://auth:3002/api
     depends_on:
       - api_db
 
