@@ -1,6 +1,16 @@
+# docker-compose.development.yml
 version: '3'
 
 services:
+  frontend:
+    command: npm run start
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./frontend/src:/usr/src/app/src
+      - ./frontend/public:/usr/src/app/public
   api:
     command: npm run dev
     volumes:
