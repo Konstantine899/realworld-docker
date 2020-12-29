@@ -1,6 +1,7 @@
 // api/src/index.js
 const express = require('express');
 const mongoose = require('mongoose');
+const axios = require('axios');
 const { connectDb } = require('./helpers/db');
 const { host, port, db, authApiUrl } = require('./configuration');
 const app = express();
@@ -34,10 +35,22 @@ app.get('/test', (req, res) => {
   res.send('Наш сервер запущен корректно');
 });
 
+app.get('/api/testapidata', (req, res) => {
+  try {
+    res.json({
+      testwithapi: true,
+    });
+  } catch (e) {
+    console.log(e);
+  }
+});
+
 app.get('/testwithcurrentuser', (req, res) => {
-  console.log('authApiUrl', authApiUrl);
-  res.json({
-    testwithcurrentuser: true,
+  axios.get(authApiUrl + '/currentUser').then((responce) => {
+    res.json({
+      testwithcurrentuser: true,
+      currentUserFromAuth: responce.data,
+    });
   });
 });
 
