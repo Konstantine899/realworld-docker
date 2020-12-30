@@ -46,12 +46,16 @@ app.get('/api/testapidata', (req, res) => {
 });
 
 app.get('/testwithcurrentuser', (req, res) => {
-  axios.get(authApiUrl + '/currentUser').then((responce) => {
-    res.json({
-      testwithcurrentuser: true,
-      currentUserFromAuth: responce.data,
+  try {
+    axios.get(authApiUrl + '/currentUser').then((responce) => {
+      res.json({
+        testwithcurrentuser: true,
+        currentUserFromAuth: responce.data,
+      });
     });
-  });
+  } catch (e) {
+    console.log(e);
+  }
 });
 
 connectDb()
