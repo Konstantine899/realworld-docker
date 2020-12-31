@@ -35,10 +35,10 @@ app.get('/test', (req, res) => {
   res.send('Наш сервер запущен корректно');
 });
 
-app.get('/api/testapidata', (req, res) => {
+app.get('/testapidata', (req, res) => {
   try {
     res.json({
-      testwithapi: true,
+      testapidata: true,
     });
   } catch (e) {
     console.log(e);

@@ -1,11 +1,15 @@
 // frontend/src/App.js
+import React from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
   // axios(/api/posts).then((response) => {});
   const makeApiRequest = () => {
-    console.log('makeApiRequest');
+    axios('/api/testwithcurrentuser').then((responce) => {
+      console.log('response', responce);
+    });
   };
 
   return (
